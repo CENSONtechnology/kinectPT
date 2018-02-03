@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exercise.component.css']
 })
 export class ExerciseComponent implements OnInit {
-  exercises: string[] = ['arm raises', 'leg raises', 'shrugs', 'lunges'];
+  exercises: string[] = ['arm raises', 'leg raises', 'shrugs', 'asdf', 'asdf', 'sdf'];
   constructor() { }
 
   ngOnInit() {
