@@ -19,13 +19,13 @@ export class ChartComponent implements OnInit {
     datasets: [
       {
         label: "Arm Movement Degree Progress",
-        data: [65, 59, 80, 81, 56, 55, 40],
+        data: [3, 20, 36, 89, 96, 110, 162],
         backgroundColor: [
-          'rgba(75, 192, 192, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
         ],
         borderColor: [
-          'rgba(75, 192, 192, .6)'
-      ]
+          'rgba(54, 162, 235, .4)'
+        ]
       }
     ]
   };
