@@ -1,0 +1,16 @@
+.card {
+    background: #F4F2F2;
+    border-color: #F4F2F2;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.card-body {
+    margin: 0 auto; 
+    float: none; 
+}
+
+button {
+    border-radius: 3px;
+}
+
