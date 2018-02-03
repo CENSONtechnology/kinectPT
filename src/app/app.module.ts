@@ -14,6 +14,9 @@ import { ChartComponent } from './components/chart/chart.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { ExerciseService } from 'app/services/exercise.service';
+import { environment } from 'environments/environment';
+
+export const firebaseConfig = environment.firebaseConfig;
 
 const appRoutes: Routes = [
   {path: '', component: ExerciseComponent},
@@ -34,6 +37,8 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
     ChartModule
   ],
   providers: [ExerciseService],

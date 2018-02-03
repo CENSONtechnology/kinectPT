@@ -4,5 +4,14 @@
 // The list of which env maps to which file can be found in `angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  // Initialize Firebase
+  firebaseConfig: {
+    apiKey: 'AIzaSyDWHQLzswcdTDiUoJr8xhrgIjdTMKpCHvg',
+    databaseURL: 'https://mangohacks-da856.firebaseio.com',
+    projectId: 'mangohacks-da856',
+    storageBucket: 'mangohacks-da856.appspot.com',
+    messagingSenderId: '869321238360'
+  }
 };
