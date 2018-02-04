@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes} from '@angular/router';
 import { ChartModule } from 'angular2-chartjs';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { AppComponent } from './app.component';
 import { ExerciseComponent } from './components/exercise/exercise.component';
@@ -15,6 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { ExerciseService } from 'app/services/exercise.service';
 import { environment } from 'environments/environment';
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -38,7 +38,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule,
+    AngularFireDatabaseModule,
     ChartModule
   ],
   providers: [ExerciseService],

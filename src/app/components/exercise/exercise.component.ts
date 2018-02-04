@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ExerciseService } from 'app/services/exercise.service';
 import { Observable } from 'rxjs/Observable';
-import { AngularFirestoreCollection } from 'angularfire2/firestore';
+import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 
 @Component({
   selector: 'app-exercise',
@@ -10,18 +10,11 @@ import { AngularFirestoreCollection } from 'angularfire2/firestore';
 })
 export class ExerciseComponent implements OnInit {
   //exercises: string[] = ['arm raises', 'leg raises', 'shrugs', 'asdf', 'asdf', 'sdf'];
-  exerciseCollection: AngularFirestoreCollection<IExercise>;
-  exercises: Observable<IExercise[]>;
+  exercises: any;
   constructor(private exerciseService: ExerciseService) { }
 
   ngOnInit() {
-    this.exerciseCollection = <AngularFirestoreCollection<IExercise>>this.exerciseService.getExercises();
-    this.exercises = this.exerciseCollection.valueChanges();
+    this.exerciseService.getExercises().subscribe(exercises => this.exercises = exercises);
   }
 
-}
-
-interface IExercise {
-  name: string;
-  value: number;
 }
