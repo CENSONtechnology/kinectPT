@@ -8,12 +8,13 @@ export class ExerciseService {
   constructor(private afDb: AngularFireDatabase) {  }
 
   getExercises() {
+    console.log(this.afDb.list('exercise'));
     return this.afDb.list('exercise') as FirebaseListObservable<IExercise[]>;
   }
 }
 
 interface IExercise {
-  metric: string;
-  date: string;
-  value: number;
+  metric?: string;
+  date?: string;
+  value?: number;
 }

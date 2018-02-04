@@ -15,6 +15,7 @@ export class ExerciseComponent implements OnInit {
 
   ngOnInit() {
     this.exerciseService.getExercises().subscribe(exercises => this.exercises = exercises);
+    console.log(this.exercises);
   }
 
 }
