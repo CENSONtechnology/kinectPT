@@ -13,8 +13,11 @@ import { ChartComponent } from './components/chart/chart.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { ExerciseService } from 'app/services/exercise.service';
+import { GraphService } from 'app/services/graph.service';
 import { environment } from 'environments/environment';
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
+import { LegComponent } from './components/leg/leg.component';
+import { ShrugComponent } from './components/shrug/shrug.component';
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -30,7 +33,9 @@ const appRoutes: Routes = [
     DataComponent,
     ChartComponent,
     NavbarComponent,
-    AnalyticsComponent
+    AnalyticsComponent,
+    LegComponent,
+    ShrugComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,7 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     ChartModule
   ],
-  providers: [ExerciseService],
+  providers: [ExerciseService,GraphService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

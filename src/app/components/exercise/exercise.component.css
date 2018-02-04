@@ -14,3 +14,11 @@ button {
     border-radius: 3px;
 }
 
+#title {
+    padding-top: 50px;
+
+}
+
+#para {
+    padding-bottom: 50px;
+}

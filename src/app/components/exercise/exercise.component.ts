@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ExerciseService } from 'app/services/exercise.service';
 import { Observable } from 'rxjs/Observable';
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
+import { GraphService } from 'app/services/graph.service';
 
 @Component({
   selector: 'app-exercise',
@@ -11,7 +12,11 @@ import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 export class ExerciseComponent implements OnInit {
   exercises: string[] = ['arm raises', 'leg raises', 'shrugs'];
   //exercises: any;
-  constructor(private exerciseService: ExerciseService) { }
+  constructor(private exerciseService: ExerciseService, private graphService: GraphService) { }
+
+  setIt(curr){
+    this.graphService.setCurrent(curr);
+  }
 
   ngOnInit() {
     /*

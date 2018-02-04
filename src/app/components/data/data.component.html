@@ -1,11 +1,12 @@
 <div class="album py-5 bg-light">
   <div class="container">
     <section class="text-center">
-      <h1 class="jumbotron-heading">Data</h1>
+      <h1 class="jumbotron-heading">{{current}} Physical Therapy Progress</h1>
       <p class="lead text-muted">Physical therapy analytics 
       </p>
     </section>
-    <app-chart></app-chart>
-    <app-analytics></app-analytics>
+    <app-chart *ngIf="arm raises"></app-chart>
+    <app-leg *ngIf="leg raises"></app-leg>
+    <app-shrug *ngIf="shrugs"></app-shrug>
   </div>
 </div>

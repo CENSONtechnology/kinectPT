@@ -4,36 +4,35 @@ import { AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: 'app-chart',
-  templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.css']
+  selector: 'app-leg',
+  templateUrl: './leg.component.html',
+  styleUrls: ['./leg.component.css']
 })
-export class ChartComponent implements OnInit {
+export class LegComponent implements OnInit {
 
   constructor(private exerciseService: ExerciseService) {
 
-    this.data.labels = this.exerciseService.getArmDates();
+    this.data.labels = this.exerciseService.getLegDates();
    }
   datas: any;
   private times = [];
-  title = "";
 
   ngOnInit() {
-    this.data.labels = this.exerciseService.getArmDates();
+    this.data.labels = this.exerciseService.getLegDates();
   }
 
   type = 'line';
   data = {
-    labels: this.exerciseService.getArmDates(),
+    labels: this.exerciseService.getLegDates(),
     datasets: [
       {
-        label: "Arm Movement Degree Progress",
-        data: this.exerciseService.getArmValues(),
+        label: "Leg Movement Degree Progress",
+        data: this.exerciseService.getLegValues(),
         backgroundColor: [
           'rgba(54, 162, 235, 0.0)',
         ],
         borderColor: [
-          'rgba(54, 162, 235, .8)'
+          'rgba(68, 205, 173, .8)'
         ]
       }
     ]
