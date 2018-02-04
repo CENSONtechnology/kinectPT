@@ -8,8 +8,8 @@ export class ExerciseService {
   constructor(private afDb: AngularFireDatabase) {  }
 
   getExercises() {
-    console.log(this.afDb.list('exercise'));
-    return this.afDb.list('exercise') as FirebaseListObservable<IExercise[]>;
+    console.log(this.afDb.list('data'));
+    return this.afDb.list('data') as FirebaseListObservable<IExercise[]>;
   }
 }
 

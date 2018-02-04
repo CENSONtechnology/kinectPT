@@ -9,13 +9,17 @@ import { FirebaseListObservable } from 'angularfire2/database-deprecated';
   styleUrls: ['./exercise.component.css']
 })
 export class ExerciseComponent implements OnInit {
-  //exercises: string[] = ['arm raises', 'leg raises', 'shrugs', 'asdf', 'asdf', 'sdf'];
-  exercises: any;
+  exercises: string[] = ['arm raises', 'leg raises', 'shrugs'];
+  //exercises: any;
   constructor(private exerciseService: ExerciseService) { }
 
   ngOnInit() {
-    this.exerciseService.getExercises().subscribe(exercises => this.exercises = exercises);
-    console.log(this.exercises);
+    /*
+    this.exerciseService.getExercises().subscribe(exercises => {
+      this.exercises = exercises
+      console.log(this.exercises);
+    });
+    */
   }
 
 }
